@@ -1,0 +1,18 @@
+table{
+    margin-top:50px;
+}
+.btn{
+    $color:red;
+    border-radius: 60%;
+    background:$color;
+    color:#fff;
+    font-size: 1rem;
+    border: none;
+    outline:none;
+    width: 20px;
+    height: 20px;
+
+    &:hover{
+        background:darken($color,20%);
+    }
+}

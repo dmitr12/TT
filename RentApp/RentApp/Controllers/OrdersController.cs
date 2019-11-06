@@ -94,7 +94,7 @@ namespace RentApp.Controllers
 
         // DELETE: api/Orders/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Orders>> DeleteOrders(int id)
+        public async Task<ActionResult<IEnumerable<Orders>>> DeleteOrders(int id)
         {
             var orders = await _context.Orders.FindAsync(id);
             if (orders == null)
@@ -105,7 +105,7 @@ namespace RentApp.Controllers
             _context.Orders.Remove(orders);
             await _context.SaveChangesAsync();
 
-            return orders;
+            return _context.Orders.ToList();
         }
 
         private bool OrdersExists(int id)
