@@ -1,17 +1,16 @@
 table{
     margin-top:50px;
 }
-.btn{
+.bt-del{
     $color:red;
-    border-radius: 60%;
-    background:$color;
+    border-radius: 50%;
+    text-align: center;
+    margin-top: 3px;
     color:#fff;
-    font-size: 1rem;
     border: none;
     outline:none;
-    width: 20px;
-    height: 20px;
-
+    width: 25px;
+    height: 25px;
     &:hover{
         background:darken($color,20%);
     }
@@ -23,9 +22,21 @@ table{
             height:100%;
             border:none;
             outline:none;
+            color:white;
         }
     }
 }
-.ex{
-    margin-left: 500px;
+th{
+    border-top-width: 0;
+    color:#2f3133;
+}
+.btn{
+    $color:green;
+    text-align: center;
+    color:#fff;
+    border: none;
+    outline:none;
+    &:hover{
+        background:darken($color,20%);
+    }
 }

@@ -20,7 +20,6 @@ namespace RentApp.Controllers
             _context = context;
             filter = new Filter(_context);
         }
-        // GET: api/Orders
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Orders>>> GetOrders()
         {
@@ -52,7 +51,6 @@ namespace RentApp.Controllers
         {
             return filter.GetListOrdersByMark(mark);
         }
-        // PUT: api/Orders/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutOrders(int id, Orders orders)
         {
@@ -82,7 +80,6 @@ namespace RentApp.Controllers
             return NoContent();
         }
 
-        // POST: api/Orders
         [HttpPost]
         public async Task<ActionResult<Orders>> PostOrders(Orders orders)
         {
@@ -92,7 +89,6 @@ namespace RentApp.Controllers
             return CreatedAtAction("GetOrders", new { id = orders.IdOrder }, orders);
         }
 
-        // DELETE: api/Orders/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<IEnumerable<Orders>>> DeleteOrders(int id)
         {

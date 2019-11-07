@@ -1,2 +1,11 @@
-<button class="btn-success" (click)="sortAsc()">Sort by start date asc</button>
-<button class="btn-warning" (click)="sortDesc()">Sort by start date desc</button>
+<div class="row">
+    <div class="col-8">
+        <select class="form-control" #list>
+            <option value="startdate" selected>Sort by start date hire</option> 
+            <option value="enddate">Sort by end date hire</option>
+        </select> 
+    </div>    
+    <div class="col-4">
+        <button class="btn btn-success" (click)="sortOrders(list)">Sort</button>
+    </div>
+</div>

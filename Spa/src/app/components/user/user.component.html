@@ -1,18 +1,18 @@
-<table class="table table-bordered">
-  <thead class="bg-danger">
+<table class="table table-dark">
+  <thead class="thead bg-warning">
     <tr>
       <th>Number License Driver</th>
-      <th>FirstName</th>
+      <th>First Name</th>
       <th>Name</th>
       <th>Date Birth</th>
     </tr>
   </thead>
   <tbody>
-    <tr class="bg-primary" *ngFor="let user of userService.users">
-      <td>{{user.NumberDriverLicense}}</td>
-      <td>{{user.Firstname}}</td>
-      <td>{{user.Name}}</td>
-      <td>{{user.DateBirth | date:'dd.MM.yyyy'}}</td>
+    <tr *ngFor="let user of userService.users">
+      <td class="border border-warning">{{user.NumberDriverLicense}}</td>
+      <td class="border border-warning">{{user.Firstname}}</td>
+      <td class="border border-warning">{{user.Name}}</td>
+      <td class="border border-warning">{{user.DateBirth | date:'dd.MM.yyyy'}}</td>
     </tr>
   </tbody>
 </table>

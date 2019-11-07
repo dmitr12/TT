@@ -1,31 +1,41 @@
-<table class="table table-bordered bg-success">
-    <thead>
-        <th>NumberOrder</th>
-        <th>NumberDriverLicense</th>
-        <th>RegistrationNumber</th>
-        <th>StartDateHire</th>
-        <th>EndDateHire</th>
+<div class="row">
+    <div class="col-6">
+        <app-filter-order></app-filter-order>
+    </div>
+    <div class="col-6">
+         <app-sort-order></app-sort-order>        
+    </div>
+</div>
+<div class="row">
+ <div class="col-3">
+    <app-add-order></app-add-order>
+ </div>
+ <div class="col-9">
+  <table class="table table-dark">
+    <thead class="thead bg-danger">
+        <th>Number Order</th>
+        <th>Number Driver License</th>
+        <th>Car Registration Number</th>
+        <th>Start Date Hire</th>
+        <th>End Date Hire</th>
         <th>Comment</th>
         <th></th>
         <th></th>
     </thead>
     <tbody>
-        <tr class="str bg-primary" *ngFor="let order of orderService.orders; let i=index">
-            <td>{{i+1}}</td>
-            <td><input class="bg-primary" type="text" [(ngModel)]="order.NumberDriverLicense" (click)="setChangeRowId(order.IdOrder)"></td>
-            <td><input class="bg-primary" type="text" [(ngModel)]="order.RegistrationNumber" (click)="setChangeRowId(order.IdOrder)"></td>
-            <td *ngIf="order.IdOrder===changeRowId"><input class="bg-primary" type="date" [(ngModel)]="order.StartDateHire"></td>
-            <td *ngIf="order.IdOrder!==changeRowId" (click)="setChangeRowId(order.IdOrder)">{{order.StartDateHire|date:'dd.MM.yyyy'}}</td>
-            <td *ngIf="order.IdOrder===changeRowId"><input class="bg-primary" type="date" [(ngModel)]="order.EndDateHire"></td>
-            <td *ngIf="order.IdOrder!==changeRowId" (click)="setChangeRowId(order.IdOrder)">{{order.EndDateHire|date:'dd.MM.yyyy'}}</td>
-            <td><input class="bg-primary" type="text" [(ngModel)]="order.Comment" (click)="setChangeRowId(order.IdOrder)"></td>
-            <td><button class="btn" (click)="removeOrder(order.IdOrder)">x</button></td>
-            <td><button class="bg-success" (click)="changeOrder(order)">Change</button></td>
+        <tr class="str" *ngFor="let order of orderService.orders; let i=index">
+            <td class="border border-danger">{{i+1}}</td>
+            <td class="border border-danger"><input class="bg-dark" type="text" [(ngModel)]="order.NumberDriverLicense" (click)="setChangeRowId(order.IdOrder)"></td>
+            <td class="border border-danger"><input class="bg-dark" type="text" [(ngModel)]="order.RegistrationNumber" (click)="setChangeRowId(order.IdOrder)"></td>
+            <td class="border border-danger" *ngIf="order.IdOrder===changeRowId"><input class="bg-dark" type="date" [(ngModel)]="order.StartDateHire"></td>
+            <td class="border border-danger" *ngIf="order.IdOrder!==changeRowId" (click)="setChangeRowId(order.IdOrder)">{{order.StartDateHire|date:'dd.MM.yyyy'}}</td>
+            <td class="border border-danger" *ngIf="order.IdOrder===changeRowId"><input class="bg-dark" type="date" [(ngModel)]="order.EndDateHire"></td>
+            <td class="border border-danger" *ngIf="order.IdOrder!==changeRowId" (click)="setChangeRowId(order.IdOrder)">{{order.EndDateHire|date:'dd.MM.yyyy'}}</td>
+            <td class="border border-danger"><input class="bg-dark" type="text" [(ngModel)]="order.Comment" (click)="setChangeRowId(order.IdOrder)"></td>
+            <td class="border border-danger"><button class="btn bg-success" (click)="changeOrder(order)">Change</button></td>
+            <td class="border border-danger"><button class="bt-del bg-danger" (click)="removeOrder(order.IdOrder)">x</button></td>
         </tr>
     </tbody>
-</table>
-<app-filter-order></app-filter-order>
-<div class="ex">
-    <app-add-order></app-add-order>
+  </table>
+ </div>
 </div>
-<app-sort-order></app-sort-order>

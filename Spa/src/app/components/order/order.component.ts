@@ -17,18 +17,16 @@ export class OrderComponent implements OnInit {
     this.orderService.getOrders()
   }
   removeOrder(idOrder:number){
-    this.orderService.onRemove(idOrder)
+    this.orderService.onRemove(idOrder).subscribe(res=>{
+      this.orderService.getOrders();
+    })
   }
   setChangeRowId(IdOrder){
     this.changeRowId=IdOrder
   }
   changeOrder(order){
     this.orderService.changeOrder(order).subscribe(res=>{
-      console.log("good!")
       this.orderService.getOrders();
-    },
-    error=>{
-      console.log(error)
     })
   }
 }

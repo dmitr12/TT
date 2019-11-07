@@ -1,10 +1,17 @@
-<select #list>
-    <option value="username" selected>By user name</option> 
-    <option value="modelcar">By model car</option>
-    <option value="markcar">By mark car</option>
-    <option value="startdate">By start date hire</option>
-    <option value="enddate">By end date hire</option>
-  </select>
-  <button (click)="getOrdersFilter(list)">Filter</button>
-  <button (click)="getOrders()">Reset table</button>
-<input type="text" placeholder="filter by..." (keydown.Enter)="getOrdersFilter(list)" [(ngModel)]="searchString">
+
+<div class="row">
+  <div class="col-4">
+    <button class="btn bg-success" (click)="getOrdersFilter(list)">Filter</button>
+    <button class="btn bg-danger" (click)="getOrders()">Reset table</button>
+  </div>
+  <div class="col-8">
+    <input class="form-control" type="text" placeholder="Filter by..." (keydown.Enter)="getOrdersFilter(list)" [(ngModel)]="searchString">
+    <select class="form-control" #list>
+        <option value="username" selected>By user name</option> 
+        <option value="modelcar">By model car</option>
+        <option value="markcar">By mark car</option>
+        <option value="startdate">By start date hire</option>
+        <option value="enddate">By end date hire</option>
+      </select> 
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<table class="table table-dark">
+     <thead class="thead bg-success">
+          <tr>
+            <th>Registration Number</th>
+            <th>Mark</th>
+            <th>Model</th>
+            <th>Class</th>
+            <th>Year Issue</th>
+          </tr>
+    </thead>
+    <tbody>
+          <tr *ngFor="let car of carService.cars">
+            <td class="border border-success">{{car.RegistrationNumber}}</td>
+            <td class="border border-success">{{car.Mark}}</td>
+            <td class="border border-success">{{car.Model}}</td>
+            <td class="border border-success">{{car.Class}}</td>
+            <td class="border border-success">{{car.YearIssue | date:'yyyy'}}</td>
+          </tr>
+     </tbody>
+</table>

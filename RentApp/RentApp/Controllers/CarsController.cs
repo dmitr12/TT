@@ -20,7 +20,6 @@ namespace RentApp.Controllers
             _context = context;
         }
 
-        // GET: api/Cars
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Cars>>> GetCars()
         {

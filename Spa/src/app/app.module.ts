@@ -9,6 +9,7 @@ import { OrderComponent } from './components/order/order.component';
 import { AddOrderComponent } from './components/add-order/add-order.component';
 import { FilterOrderComponent } from './components/filter-order/filter-order.component';
 import { SortOrderComponent } from './components/sort-order/sort-order.component';
+import { CarComponent } from './components/car/car.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { SortOrderComponent } from './components/sort-order/sort-order.component
     AddOrderComponent,
     FilterOrderComponent,
     SortOrderComponent,
+    CarComponent,
   ],
   imports: [
     BrowserModule,

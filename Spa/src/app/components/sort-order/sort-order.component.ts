@@ -13,11 +13,11 @@ export class SortOrderComponent implements OnInit {
   ngOnInit() {
   }
 
-  sortAsc(){
-    this.orderService.sortOrdersByDateAsc()
-  }
-  sortDesc(){
-    this.orderService.sortOrdersByDateDesc()
+  sortOrders(list){
+    if(list.value==="startdate")
+       this.orderService.sortOrdersByStartDate()
+    else
+       this.orderService.sortOrdersByEndDate()
   }
 
 }

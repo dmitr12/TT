@@ -1,20 +1,20 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" >
-    <div>
-        <input formControlName="NumberDriverLicense" placeholder="NumberDriverLicense" type="text">
+    <div class="form-group">
+        <input class="form-control" formControlName="NumberDriverLicense" placeholder="NumberDriverLicense" type="text">
     </div>
-    <div>
-        <input formControlName="RegistrationNumber" placeholder="RegistrationNumber" type="text">
+    <div class="form-group">
+        <input class="form-control" formControlName="RegistrationNumber" placeholder="RegistrationNumber" type="text">
     </div>
-    <div>
-        <input formControlName="StartDateHire" placeholder="StartDateHire" type="date">
+    <div class="form-group">
+        <input class="form-control" formControlName="StartDateHire" placeholder="StartDateHire" type="date">
     </div>
-    <div>
-        <input formControlName="EndDateHire" placeholder="EndDateHire" type="date">
+    <div class="form-group">
+        <input class="form-control" formControlName="EndDateHire" placeholder="EndDateHire" type="date">
     </div>
-    <div>
-        <input formControlName="Comment" placeholder="Comment" type="text">
+    <div class="form-group">
+        <input class="form-control" formControlName="Comment" placeholder="Comment" type="text">
     </div>
-    <div>
-        <input type="submit" value="Submit">
+    <div class="form-group">
+        <input class="form-control bg-success" type="submit" value="Add order">
     </div>
 </form>
