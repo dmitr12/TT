@@ -1,0 +1,10 @@
+<select #list>
+    <option value="username" selected>By user name</option> 
+    <option value="modelcar">By model car</option>
+    <option value="markcar">By mark car</option>
+    <option value="startdate">By start date hire</option>
+    <option value="enddate">By end date hire</option>
+  </select>
+  <button (click)="getOrdersFilter(list)">Filter</button>
+  <button (click)="getOrders()">Reset table</button>
+<input type="text" placeholder="filter by..." (keydown.Enter)="getOrdersFilter(list)" [(ngModel)]="searchString">

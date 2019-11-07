@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { OrderService } from 'src/app/services/order.service';
+import { OrderService, Order } from 'src/app/services/order.service';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-order',
@@ -8,18 +9,26 @@ import { OrderService } from 'src/app/services/order.service';
 })
 export class OrderComponent implements OnInit {
 
-  private searchString:string=''
+  public changeRowId:number=-1
 
-  constructor(private orderService:OrderService) { }
+  constructor(private orderService:OrderService, private formBuilder:FormBuilder) { }
 
   ngOnInit() {
     this.orderService.getOrders()
   }
-
-  getOrdersByName(){
-    this.orderService.getOrdersByUserName(this.searchString)
-  }
   removeOrder(idOrder:number){
     this.orderService.onRemove(idOrder)
+  }
+  setChangeRowId(IdOrder){
+    this.changeRowId=IdOrder
+  }
+  changeOrder(order){
+    this.orderService.changeOrder(order).subscribe(res=>{
+      console.log("good!")
+      this.orderService.getOrders();
+    },
+    error=>{
+      console.log(error)
+    })
   }
 }

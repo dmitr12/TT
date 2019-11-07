@@ -1,9 +1,9 @@
 
 <nav class="navbar fixed-top">
-    <button class="header-button text-danger">Users</button>
-    <button class="header-button text-warning">Cars</button>
-    <button class="header-button text-success">Orders</button> 
+    <a class="text-danger" routerLink="/">Orders</a>
+    <a class="text-warning" routerLink="/users">Users</a>
+    <a class="text-success">Cars</a> 
 </nav>  
 <div class="container">
-  <app-order></app-order>
+  <router-outlet></router-outlet>
 </div>

@@ -7,17 +7,25 @@
         <th>EndDateHire</th>
         <th>Comment</th>
         <th></th>
+        <th></th>
     </thead>
     <tbody>
-        <tr class="bg-primary" *ngFor="let order of orderService.orders; let i=index">
+        <tr class="str bg-primary" *ngFor="let order of orderService.orders; let i=index">
             <td>{{i+1}}</td>
-            <td>{{order.NumberDriverLicense}}</td>
-            <td>{{order.RegistrationNumber}}</td>
-            <td>{{order.StartDateHire | date:'dd.MM.yyyy'}}</td>
-            <td>{{order.EndDateHire | date:'dd.MM.yyyy'}}</td>
-            <td>{{order.Comment}}</td>
-            <td><button class="btn" (click)="removeOrder(order.IdOrder)">&times;</button></td>
+            <td><input class="bg-primary" type="text" [(ngModel)]="order.NumberDriverLicense" (click)="setChangeRowId(order.IdOrder)"></td>
+            <td><input class="bg-primary" type="text" [(ngModel)]="order.RegistrationNumber" (click)="setChangeRowId(order.IdOrder)"></td>
+            <td *ngIf="order.IdOrder===changeRowId"><input class="bg-primary" type="date" [(ngModel)]="order.StartDateHire"></td>
+            <td *ngIf="order.IdOrder!==changeRowId" (click)="setChangeRowId(order.IdOrder)">{{order.StartDateHire|date:'dd.MM.yyyy'}}</td>
+            <td *ngIf="order.IdOrder===changeRowId"><input class="bg-primary" type="date" [(ngModel)]="order.EndDateHire"></td>
+            <td *ngIf="order.IdOrder!==changeRowId" (click)="setChangeRowId(order.IdOrder)">{{order.EndDateHire|date:'dd.MM.yyyy'}}</td>
+            <td><input class="bg-primary" type="text" [(ngModel)]="order.Comment" (click)="setChangeRowId(order.IdOrder)"></td>
+            <td><button class="btn" (click)="removeOrder(order.IdOrder)">x</button></td>
+            <td><button class="bg-success" (click)="changeOrder(order)">Change</button></td>
         </tr>
     </tbody>
 </table>
-<input type="text" placeholder="filter by username" (keydown.Enter)="getOrdersByName()" [(ngModel)]="searchString">
+<app-filter-order></app-filter-order>
+<div class="ex">
+    <app-add-order></app-add-order>
+</div>
+<app-sort-order></app-sort-order>
